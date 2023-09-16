@@ -1,9 +1,12 @@
+import Navbar from "components/Navbar";
 
-import Navbar from "components/Navbar"
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
+  return (
     <>
       <Navbar />
       {children}
     </>
-}
+  );
+};
+
 export default Layout;
