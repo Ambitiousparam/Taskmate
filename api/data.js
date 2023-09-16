@@ -1,6 +1,6 @@
 export const resources =[
     {
-        id :1,
+        id :"1",
         title :"learning singleton pattern ",
         description: "i would like to learn singleton in js language,its important for my work ",
         link :"https//link.com",
@@ -10,8 +10,7 @@ export const resources =[
         active :true
     },
     {
-        id :2,
-
+        id :"2",
         title :"resource 2  ",
         description: "resouce 2 description ",
         link :"https//link.com",
@@ -21,8 +20,7 @@ export const resources =[
         active :false
     },
     {
-        id :3,
-
+        id :"3",
         title :"resource 3  ",
         description: "resouce 3 description",
         link :"https//link.com",

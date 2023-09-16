@@ -7,10 +7,13 @@ import { resources } from "api/data";
 function Home() {
   return (
     <Layout>
-      <ResourceHighlight />
+      <ResourceHighlight 
+        resources={resources.slice(0,2)}
+      />
       <Newsletter />
-      <ResourceList />
-      { JSON.stringify(resources) }
+      <ResourceList 
+        resources={resources.slice(2)}
+      />
       <Footer />
     </Layout>
   )
