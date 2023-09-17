@@ -1,3 +1,4 @@
+import React from "react";
 import Layout from "components/Layout";
 import ResourceHighlight from "components/ResourceHighlight";
 import Newsletter from "components/Newsletter";
