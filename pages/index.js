@@ -4,8 +4,7 @@ import ResourceHighlight from "components/ResourceHighlight";
 import Newsletter from "components/Newsletter";
 import ResourceList from "components/ResourceList";
 import Footer from "components/Footer";
-import { resources } from "api/data";
-function Home() {
+function Home(resources) {
   return (
     <Layout>
       <ResourceHighlight 
@@ -18,5 +17,17 @@ function Home() {
       <Footer />
     </Layout>
   )
+}
+
+//get statis props function is from next js and is handled on the server itself of next
+export  async function getStaticProps(){
+
+  const resdata =  await fetch("http://localhost:3000/api/resources"); 
+  const data = await resdata.json();
+  return{
+    props:{
+     resources : data
+    }
+  }
 }
 export default Home;
