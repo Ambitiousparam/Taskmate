@@ -1,14 +1,14 @@
-import Link from "next/link";
+import Link from "next/Link";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="container">
         <div className="navbar-brand">
-          <Link href="/">
-            <a className="navbar-item">
+          <Link href="/" passHref>
+            <div className="navbar-item">
               <h1>Content Manager</h1>
-            </a>
+            </div>
           </Link>
           <span className="navbar-burger burger" data-target="navbarMenu">
             <span></span>
@@ -26,24 +26,24 @@ const Navbar = () => {
                 </span>
               </div>
             </div>
-            <Link href="/">
-              <a className="navbar-item is-active is-size-5 has-text-weight-semibold">
+            <Link href="/" passHref>
+              <div className="navbar-item is-size-5 has-text-weight-semibold">
                 Home
-              </a>
+              </div>
             </Link>
-            <Link href="/resources/new">
-              <a className="navbar-item is-size-5 has-text-weight-semibold">
+            <Link href="/resources/new" passHref>
+              <div className="navbar-item is-size-5 has-text-weight-semibold">
                 Add
-              </a>
+              </div>
             </Link>
-            <a className="navbar-item is-size-5 has-text-weight-semibold">
+            <div className="navbar-item is-size-5 has-text-weight-semibold">
               Features
-            </a>
+            </div>
           </div>
         </div>
       </div>
     </nav>
   );
-};
+}
 
 export default Navbar;
