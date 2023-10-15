@@ -8,13 +8,20 @@ const DEFAULT_DATA ={
   link: "",
   priority: "2",
   timeToFinish : "" 
-
 }
-
-
 
 const ResourceCreate = () => {
   const[form,setForm]=useState(DEFAULT_DATA);
+
+  const submitForm =()=>{
+    alert(JSON.stringify(form));
+  }
+  const handletitlechange = (e) =>{
+    setForm({
+      ...form,
+      title: e.target.value
+    })
+  }
   return (
     <Layout>
       <div className="container">
@@ -26,8 +33,13 @@ const ResourceCreate = () => {
                 <div className="field">
                   <label className="label">Title</label>
                   <div className="control">
-                  <input value={form.title} className="input" type="text" placeholder="resource manager project using next js" />
-
+                  <input 
+                  onChange={handletitlechange}
+                  value={form.title} 
+                  className="input" 
+                  type="text" 
+                  placeholder="resource manager project using next js" />
+                  
                   </div>
                 </div>
                 <div className="field">
@@ -63,7 +75,10 @@ const ResourceCreate = () => {
                 </div>
                 <div className="field is-grouped">
                 <div className="control">
-                  <button className="button is-link">Submit</button>
+                  <button 
+                  onClick={submitForm}
+                  type ="button"
+                  className="button is-link">Submit</button>
                 </div>
                 <div className="control">
                    <button className="button is-link is-light">Cancel</button>
