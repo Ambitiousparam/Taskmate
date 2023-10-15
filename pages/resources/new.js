@@ -1,6 +1,20 @@
 import Layout from "components/Layout";
+import { useState } from "react";
+
+
+const DEFAULT_DATA ={
+  title: "",
+  description: "",
+  link: "",
+  priority: "2",
+  timeToFinish : "" 
+
+}
+
+
 
 const ResourceCreate = () => {
+  const[form,setForm]=useState(DEFAULT_DATA);
   return (
     <Layout>
       <div className="container">
@@ -12,30 +26,30 @@ const ResourceCreate = () => {
                 <div className="field">
                   <label className="label">Title</label>
                   <div className="control">
-                    <input className="input" type="text" placeholder="resource manager project using next js" />
+                  <input value={form.title} className="input" type="text" placeholder="resource manager project using next js" />
+
                   </div>
                 </div>
                 <div className="field">
                   <label className="label">Description</label>
                   <div className="control">
-                    <textarea className="textarea" placeholder="important for placement pov"></textarea>
+                    <textarea value ={form.description} className="textarea" placeholder="important for placement pov"></textarea>
                   </div>
                 </div>
                 <div className="field">
                   <label className="label">Link</label>
                   <div className="control">
-                    <input className="input" type="text" placeholder="https://resourcemanager.com" />
+                    <input value ={form.link}className="input" type="text" placeholder="https://resourcemanager.com" />
                   </div>
                 </div>
                 <div className="field">
                   <label className="label">Priority</label>
                   <div className="control">
                     <div className="select">
-                      <select>
+                      <select value ={form.priority}>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
-
                       </select>
                     </div>
                   </div>
@@ -43,8 +57,9 @@ const ResourceCreate = () => {
                 <div className="field">
                   <label className="label">Time to finish</label>
                   <div className="control">
-                    <input className="input" type="text" placeholder="Text input" />
+                    <input value ={form.timeToFinish}className="input" type="text" placeholder="" />
                   </div>
+                  <p class="help">Time is in minutes</p>
                 </div>
                 <div className="field is-grouped">
                 <div className="control">
