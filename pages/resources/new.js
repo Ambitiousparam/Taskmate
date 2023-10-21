@@ -14,7 +14,11 @@ const ResourceCreate = () => {
   const[form,setForm]=useState(DEFAULT_DATA);
 
   const submitForm =()=>{
-    alert(JSON.stringify(form));
+    fetch ("/api/resources",{
+      body: JSON.stringify(form),
+      headers:{"content-type":"application/json"},
+      method:"POST"
+    })
   }
   const handlechange = (e) =>{
     const { name,value }=e.target;
@@ -112,4 +116,3 @@ const ResourceCreate = () => {
 };
 
 export default ResourceCreate;
-//cfbr
