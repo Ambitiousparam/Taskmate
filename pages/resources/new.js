@@ -1,4 +1,5 @@
 import Layout from "components/Layout";
+import axios from "axios";
 import { useState } from "react";
 
 
@@ -14,11 +15,7 @@ const ResourceCreate = () => {
   const[form,setForm]=useState(DEFAULT_DATA);
 
   const submitForm =()=>{
-    fetch ("/api/resources",{
-      body: JSON.stringify(form),
-      headers:{"content-type":"application/json"},
-      method:"POST"
-    })
+    axios.post("/api/resources",form);
   }
   const handlechange = (e) =>{
     const { name,value }=e.target;
