@@ -10,7 +10,10 @@ export default async function(req, res) {
   }
   if(req.method == "POST"){
     console.log(req.body);
-    
+    const { title,description,link,priority,timeToFinish} = req.body;
+    if(!title || !description || !link || !priority || !timeToFinish){
+     return res.status(422).send("Data is missing");
+    }
     res.send("Data has been recieved");
 
   }
