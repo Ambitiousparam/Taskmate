@@ -15,7 +15,11 @@ const ResourceCreate = () => {
   const[form,setForm]=useState(DEFAULT_DATA);
 
   const submitForm =()=>{
-    axios.post("/api/resources",form);
+    axios.post("/api/resources",form)
+    .then(res => alert(res?.data))
+    .catch(err=>{
+      debugger 
+      alert(err?.response?.data)});
   }
   const handlechange = (e) =>{
     const { name,value }=e.target;
